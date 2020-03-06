@@ -14,7 +14,7 @@ CostDataFile:
 Site: sukrire-Blade-15-Mid-2019-Base
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-c++
+BuildName: PHAS0100ASSIGNMENT1
 
 # Subprojects
 LabelsForSubprojects: 

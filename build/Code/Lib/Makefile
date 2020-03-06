@@ -182,87 +182,6 @@ phas0100assignment1/fast:
 	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/build
 .PHONY : phas0100assignment1/fast
 
-lrgBasicTypes.o: lrgBasicTypes.cpp.o
-
-.PHONY : lrgBasicTypes.o
-
-# target to build an object file
-lrgBasicTypes.cpp.o:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgBasicTypes.cpp.o
-.PHONY : lrgBasicTypes.cpp.o
-
-lrgBasicTypes.i: lrgBasicTypes.cpp.i
-
-.PHONY : lrgBasicTypes.i
-
-# target to preprocess a source file
-lrgBasicTypes.cpp.i:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgBasicTypes.cpp.i
-.PHONY : lrgBasicTypes.cpp.i
-
-lrgBasicTypes.s: lrgBasicTypes.cpp.s
-
-.PHONY : lrgBasicTypes.s
-
-# target to generate assembly for a file
-lrgBasicTypes.cpp.s:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgBasicTypes.cpp.s
-.PHONY : lrgBasicTypes.cpp.s
-
-lrgException.o: lrgException.cpp.o
-
-.PHONY : lrgException.o
-
-# target to build an object file
-lrgException.cpp.o:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgException.cpp.o
-.PHONY : lrgException.cpp.o
-
-lrgException.i: lrgException.cpp.i
-
-.PHONY : lrgException.i
-
-# target to preprocess a source file
-lrgException.cpp.i:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgException.cpp.i
-.PHONY : lrgException.cpp.i
-
-lrgException.s: lrgException.cpp.s
-
-.PHONY : lrgException.s
-
-# target to generate assembly for a file
-lrgException.cpp.s:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgException.cpp.s
-.PHONY : lrgException.cpp.s
-
-lrgMyFunctions.o: lrgMyFunctions.cpp.o
-
-.PHONY : lrgMyFunctions.o
-
-# target to build an object file
-lrgMyFunctions.cpp.o:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgMyFunctions.cpp.o
-.PHONY : lrgMyFunctions.cpp.o
-
-lrgMyFunctions.i: lrgMyFunctions.cpp.i
-
-.PHONY : lrgMyFunctions.i
-
-# target to preprocess a source file
-lrgMyFunctions.cpp.i:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgMyFunctions.cpp.i
-.PHONY : lrgMyFunctions.cpp.i
-
-lrgMyFunctions.s: lrgMyFunctions.cpp.s
-
-.PHONY : lrgMyFunctions.s
-
-# target to generate assembly for a file
-lrgMyFunctions.cpp.s:
-	cd /home/sukrire/Github/19132099/PHAS0100Assignment1/build && $(MAKE) -f Code/Lib/CMakeFiles/phas0100assignment1.dir/build.make Code/Lib/CMakeFiles/phas0100assignment1.dir/lrgMyFunctions.cpp.s
-.PHONY : lrgMyFunctions.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -277,15 +196,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... lrgBasicTypes.o"
-	@echo "... lrgBasicTypes.i"
-	@echo "... lrgBasicTypes.s"
-	@echo "... lrgException.o"
-	@echo "... lrgException.i"
-	@echo "... lrgException.s"
-	@echo "... lrgMyFunctions.o"
-	@echo "... lrgMyFunctions.i"
-	@echo "... lrgMyFunctions.s"
 .PHONY : help
 
 
