@@ -17,7 +17,7 @@ TEST_CASE( "check size of returned X_Y", "[Linear Data Creator]") {
     REQUIRE(var2.size() == 100);
 }
 
-TEST_CASE( "check size of returned X_Y", "[Linear Data Creator]") {
+TEST_CASE( "check mean of X_Y", "[Linear Data Creator]") {
   DataImporter test3(1,0,100);
   std::vector<std::pair<double, double> >var3 = test3.GetData();
   int avg;
