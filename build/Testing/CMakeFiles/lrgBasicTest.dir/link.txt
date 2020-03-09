@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wno-deprecated-declarations  -Wno-deprecated-declarations  -Wno-deprecated-declarations -g   CMakeFiles/lrgBasicTest.dir/lrgBasicTest.cpp.o CMakeFiles/lrgBasicTest.dir/lrgCatchMain.cpp.o  -o ../bin/lrgBasicTest ../bin/libphas0100assignment1.a 
