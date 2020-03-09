@@ -1,14 +1,10 @@
-#include <vector>
-#include <memory>
 #include "lrgDataCreatorI.h"
 
-class FileDataImporter : public DataImporter {
+class DataImporter : public DataImporterI {
     public:
-    FileDataImporter(const std::string& filename){}:
-    ~FileDataImporter(){};
-    public:
-    void Startplaying(){};
-    void Stopplaying(){}:
+    // Independent and dependent variable
+    std::vector<double> X;
+    std::vector<double> Y;
 };
 
 
