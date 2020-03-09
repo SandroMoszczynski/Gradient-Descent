@@ -1,10 +1,13 @@
 #include "lrgDataCreatorI.h"
 
 class DataImporter : public DataImporterI {
+    private:
+    float theta_1;
+    float theta_0;
+    int len_array;
     public:
-    // Independent and dependent variable
-    std::vector<double> X;
-    std::vector<double> Y;
+    DataImporter(float theta_1,float theta_0, int len_array);
+    std::vector<std::pair<double, double> >GetData();
 };
 
 

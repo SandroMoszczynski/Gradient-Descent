@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../bin/libphas0100assignment1.a  CMakeFiles/phas0100assignment1.dir/lrgBasicTypes.cpp.o CMakeFiles/phas0100assignment1.dir/lrgMyFunctions.cpp.o CMakeFiles/phas0100assignment1.dir/lrgException.cpp.o
-/usr/bin/ranlib ../../bin/libphas0100assignment1.a
