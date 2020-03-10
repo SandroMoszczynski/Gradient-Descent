@@ -2,9 +2,8 @@
 
 class DataSolver : public DataSolverI {
     private:
-    float theta_1;
-    float theta_0;
+    std::vector<std::pair<double, double> > Inputs;
     public:
-    DataSolver(float theta_1,float theta_0);
+    DataSolver(std::vector<std::pair<double, double> > Inputs);
     std::pair<double, double> FitData(std::vector<std::pair<double, double> >){};
 };

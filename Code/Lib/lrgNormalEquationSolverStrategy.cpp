@@ -2,16 +2,15 @@
 #include <vector>
 #include <random>
 
-DataSolver::DataSolver(float _theta_1,float _theta_0)
+DataSolver::DataSolver(std::vector<std::pair<double, double> > Inputs)
 {
-    theta_1 = _theta_1;
-    theta_0 = _theta_0; 
+    Inputs = Inputs;
+    // y coords in a vector here 
+
 }
 
-
-//std::pair<double, double> FitData(std::vector<std::pair<double, double> >){};
-
 //std::pair<double, double> FitData(std::vector<std::pair<double, double> >){
- //  std::pair<double, double> empty;
-  //  return empty;
+
+    // use a class call to grab the vector from here
+
 //};

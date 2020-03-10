@@ -30,8 +30,8 @@ TEST_CASE( "check mean of X_Y", "[Linear Data Creator]") {
 }
 
 TEST_CASE( "create a class for DataSolver", "[Normal Equation Solver]") {
-  DataSolver test4_1(0,0);
   std::vector<std::pair<double, double> > var4_1;
+  DataSolver test4_1(var4_1);  
   std::pair<double, double>var4_2 = test4_1.FitData(var4_1); 
    REQUIRE( var4_2.first == 0);
 }
