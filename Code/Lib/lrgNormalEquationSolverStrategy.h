@@ -1,4 +1,4 @@
-#include "lrgDataCreatorI.h"
+#include "lrgLinearModelSolverStrategyI.h"
 
 class DataImporter : public DataImporterI {
     public:

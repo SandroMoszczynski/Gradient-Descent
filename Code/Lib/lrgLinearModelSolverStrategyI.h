@@ -3,5 +3,5 @@
 
 class DataImporterI {
     public:
-    virtual std::pair<double, double> FitData(std::vector<std::pair<double, double> >)
+    virtual std::pair<double, double> FitData(std::vector<std::pair<double, double> >)=0;
 };
