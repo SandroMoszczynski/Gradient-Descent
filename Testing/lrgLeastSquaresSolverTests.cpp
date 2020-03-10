@@ -1,11 +1,11 @@
 #include "catch.hpp"
 #include "lrgCatchMain.h"
 #include "lrgLinearDataCreator.h"
+#include "lrgNormalEquationSolverStrategy.h"
 #include <iostream>
 #include <vector>
 
-
-TEST_CASE( "create a class", "[Linear Data Creator]") {
+TEST_CASE( "create a class for DataImporter", "[Linear Data Creator]") {
   DataImporter test1(5,5,5);
   std::vector<std::pair<double, double> >var1 = test1.GetData();
     REQUIRE( var1[0].first == 0);
@@ -27,4 +27,11 @@ TEST_CASE( "check mean of X_Y", "[Linear Data Creator]") {
      }
      avg = sumTotal / var3.size();
      REQUIRE(avg == 51);
+}
+
+TEST_CASE( "create a class for DataSolver", "[Normal Equation Solver]") {
+  DataSolver test4_1(0,0);
+  std::vector<std::pair<double, double> > var4_1;
+  std::pair<double, double>var4_2 = test4_1.FitData(var4_1); 
+   REQUIRE( var4_2.first == 0);
 }

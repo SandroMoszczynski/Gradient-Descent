@@ -1,7 +1,7 @@
 #include <memory>
 #include <vector>
 
-class DataImporterI {
+class DataSolverI {
     public:
-    virtual std::pair<double, double> FitData(std::vector<std::pair<double, double> >)=0;
+    virtual std::pair<double, double> FitData(std::vector<std::pair<double, double> >) = 0;
 };

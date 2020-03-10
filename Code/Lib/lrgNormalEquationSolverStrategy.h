@@ -1,7 +1,10 @@
 #include "lrgLinearModelSolverStrategyI.h"
 
-class DataImporter : public DataImporterI {
+class DataSolver : public DataSolverI {
+    private:
+    float theta_1;
+    float theta_0;
     public:
-    // DataImporter(float theta_1,float theta_0, int len_array);
-    std::pair<double, double> FitData(std::vector<std::pair<double, double> >)
+    DataSolver(float theta_1,float theta_0);
+    std::pair<double, double> FitData(std::vector<std::pair<double, double> >){};
 };
