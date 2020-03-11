@@ -5,5 +5,5 @@ class DataLoader : public DataImporterI {
     std::string data_file;
     public:
     DataLoader( std::string data_file);
-    std::vector<std::pair<double, double> >GetData();
+    std::vector<std::pair<double, double> >&GetData(std::vector<std::pair<double, double> >&Outputs);
 };
