@@ -22,6 +22,3 @@ std::vector<std::pair<double, double> >DataImporter::GetData(){
     };
     return X_Y;
 };
-
-
-
