@@ -7,5 +7,5 @@ class GradientSolver : public DataSolverI {
     int batch_size;
     public:
     GradientSolver(float eta,int iterations,int batch_size);
-    std::pair<double, double> FitData(std::vector<std::pair<double, double> >Inputs);
+    std::pair<double, double> &FitData(std::vector<std::pair<double, double> >&Inputs,std::pair<double, double>&Theta);
 };

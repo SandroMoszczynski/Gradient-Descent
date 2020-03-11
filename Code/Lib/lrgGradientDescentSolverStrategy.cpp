@@ -13,40 +13,27 @@ GradientSolver::GradientSolver(float _eta,int _iterations,int _batch_size)
     batch_size = _batch_size;
 }
 
-std::pair<double, double> GradientSolver::FitData(std::vector<std::pair<double, double> > Inputs){
+std::pair<double, double> &GradientSolver::FitData(std::vector<std::pair<double, double> >&Inputs,std::pair<double, double>&Theta){
 
-    Inputs = Inputs;
-    std::vector<float> X; 
-    std::vector<float> Y; 
 
-    for (auto it = std::make_move_iterator(Inputs.begin()),
-            end = std::make_move_iterator(Inputs.end()); it != end; ++it)
-    {
-        X.push_back(std::move(it->first));
-        Y.push_back(std::move(it->second));
+    VectorXd Y_e = VectorXd::Ones(Inputs.size());
+    MatrixXd M_X = MatrixXd::Ones(Inputs.size(),2);
+
+    for(int i=0; i < Inputs.size();++i){
+        Y_e(i) = Inputs[i].second;
+        M_X(i,0) = Inputs[i].first;
     }
-    
-    VectorXf Y_e = Map<VectorXf, Unaligned>(Y.data(), Y.size());
-    VectorXf X_e = Map<VectorXf, Unaligned>(X.data(), X.size());
-    VectorXf X_0 = VectorXf::Ones(X_e.size());
 
-    MatrixXf M_X;
-    M_X << X_e,X_0;
+    MatrixXd Gradient(2,1);
+    MatrixXd Theta_e = MatrixXd::Random(2,1);
 
-    MatrixXf Gradient(1,2);
+    for(int k=0; k < iterations; ++k){
+        Gradient = 2/batch_size * M_X.transpose()*((M_X*Theta_e)-Y_e);
+        Theta_e = Theta_e - eta*Gradient;
+    };
 
-    std::pair<double, double>Theta;
-    Matrix2d Theta_e = Matrix2d::Random(1,2);
-
-    // need to make a random guess for theta
-
-//    for(int k=0; k < iterations; ++k){
-//      Gradient = 2/batch_size * M_X.transpose()*((M_X*Theta_e)-Y_e);
-//      Theta_e = Theta_e - eta*Gradient;
-//    };
-
-//    Theta.first = Theta_e(0);
- //   Theta.second = Theta_e(1);
+    Theta.first = Theta_e(0);
+    Theta.second = Theta_e(1);
     
     return Theta; 
 };

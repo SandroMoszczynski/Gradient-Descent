@@ -2,6 +2,7 @@
 #include "lrgCatchMain.h"
 #include "lrgLinearDataCreator.h"
 #include "lrgNormalEquationSolverStrategy.h"
+#include "lrgGradientDescentSolverStrategy.h"
 #include <iostream>
 #include <vector>
 
@@ -46,7 +47,16 @@ TEST_CASE( "test results for solver", "[Normal Equation Solver]") {
   test5_1.GetData(var5_1);
   DataSolver test5_2;  
   std::pair<double, double>var5_2;
-  test5_2.FitData(var5_1,var5_2);
-  std::pair<double, double>var5_3;
-   REQUIRE(var5_2 == var5_3);
+  var5_2 = test5_2.FitData(var5_1,var5_2);
+   REQUIRE(var5_2.first != 0);
+}
+
+TEST_CASE( "test results for gradient solver", "[Gradient Equation Solver]") {
+  DataImporter test6_1(1,0,100);
+  std::vector<std::pair<double, double> >var6_1;
+  test6_1.GetData(var6_1);
+  GradientSolver test6_2(1,1,50);  
+  std::pair<double, double>var6_2;
+  var6_2 = test6_2.FitData(var6_1,var6_2);
+   REQUIRE(var6_2.first != 0);
 }

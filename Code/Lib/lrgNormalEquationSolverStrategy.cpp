@@ -10,15 +10,15 @@ DataSolver::DataSolver(){}
 
 std::pair<double, double> &DataSolver::FitData(std::vector<std::pair<double, double> >&Inputs,std::pair<double, double>&Theta){
 
-    Vector2d Y_e = Vector2d::Ones(Inputs.size());
-    Matrix2d M_X = Matrix2d::Ones(Inputs.size(),2);
+    VectorXd Y_e = VectorXd::Ones(Inputs.size());
+    MatrixXd M_X = MatrixXd::Ones(Inputs.size(),2);
 
     for(int i=0; i < Inputs.size();++i){
         Y_e(i) = Inputs[i].second;
-        M_X(0,i) = Inputs[i].first;
+        M_X(i,0) = Inputs[i].first;
     }
 
-    Vector2d Theta_e = Vector2d::Ones(2);
+    MatrixXd Theta_e = MatrixXd::Ones(2,1);
 
     Theta_e =  (((M_X.transpose()*M_X).inverse())*(M_X.transpose()))*Y_e;
 
