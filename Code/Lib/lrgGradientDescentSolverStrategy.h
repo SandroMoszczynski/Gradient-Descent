@@ -1,7 +1,11 @@
 #include "lrgLinearModelSolverStrategyI.h"
 
-class DataSolver : public DataSolverI {
+class GradientSolver : public DataSolverI {
+    private:
+    float eta; 
+    int iterations;
+    int batch_size;
     public:
-    DataSolver();
+    GradientSolver(float eta,int iterations,int batch_size);
     std::pair<double, double> &FitData(std::vector<std::pair<double, double> >&Inputs,std::pair<double, double>&Theta);
 };
