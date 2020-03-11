@@ -5,5 +5,5 @@ class DataSolver : public DataSolverI {
     std::vector<std::pair<double, double> > Inputs;
     public:
     DataSolver(std::vector<std::pair<double, double> > Inputs);
-    std::pair<double, double> FitData(std::vector<std::pair<double, double> >){};
+    std::pair<double, double> FitData(std::vector<std::pair<double, double> >);
 };
