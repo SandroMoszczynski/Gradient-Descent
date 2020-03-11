@@ -9,9 +9,8 @@ DataImporter::DataImporter(float _theta_1,float _theta_0,int _len_array)
     len_array = _len_array;
 }
 
-std::vector<std::pair<double, double> >DataImporter::GetData(){
+std::vector<std::pair<double, double> >&DataImporter::GetData(std::vector<std::pair<double, double> >&X_Y){
 
-    std::vector<std::pair<double, double> >X_Y;
     std::default_random_engine generator;
 
     for(int i=0;i<100;++i){        

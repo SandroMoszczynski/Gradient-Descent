@@ -1,40 +1,29 @@
 #include "lrgNormalEquationSolverStrategy.h"
 #include <vector>
 #include <random>
+#include <iostream>
 #include <Eigen/Dense>
 
 using namespace Eigen;
 
 DataSolver::DataSolver(){}
 
-std::pair<double, double> DataSolver::FitData(std::vector<std::pair<double, double> > Inputs){
+std::pair<double, double> &DataSolver::FitData(std::vector<std::pair<double, double> >&Inputs,std::pair<double, double>&Theta){
 
-    Inputs = Inputs;
-    std::vector<float> X; 
-    std::vector<float> Y; 
+    Vector2d Y_e = Vector2d::Ones(Inputs.size());
+    Matrix2d M_X = Matrix2d::Ones(Inputs.size(),2);
 
-    for (auto it = std::make_move_iterator(Inputs.begin()),
-            end = std::make_move_iterator(Inputs.end()); it != end; ++it)
-    {
-        X.push_back(std::move(it->first));
-        Y.push_back(std::move(it->second));
+    for(int i=0; i < Inputs.size();++i){
+        Y_e(i) = Inputs[i].second;
+        M_X(0,i) = Inputs[i].first;
     }
-    
-    VectorXf Y_e = Map<VectorXf, Unaligned>(Y.data(), Y.size());
-    VectorXf X_e = Map<VectorXf, Unaligned>(X.data(), X.size());
-    VectorXf X_0 = VectorXf::Ones(X_e.size());
 
-    MatrixXf M_X;
-    M_X << X_e,X_0;
+    Vector2d Theta_e = Vector2d::Ones(2);
 
-    std::pair<double, double>Theta;
+    Theta_e =  (((M_X.transpose()*M_X).inverse())*(M_X.transpose()))*Y_e;
 
-    VectorXf Theta_e;
-
-    Theta_e =  (((M_X.transpose()*M_X).inverse())*(X_e.transpose()))*Y_e;
-
-    Theta.first = Theta_e[0];
-    Theta.second = Theta_e[1];
+    Theta.first = Theta_e(0);
+    Theta.second = Theta_e(1);
     
     return Theta; 
 };

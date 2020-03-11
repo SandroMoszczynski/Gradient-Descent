@@ -2,6 +2,7 @@
 #include <vector>
 #include <random>
 #include <Eigen/Dense>
+#include <iostream>
 
 using namespace Eigen;
 
@@ -39,13 +40,13 @@ std::pair<double, double> GradientSolver::FitData(std::vector<std::pair<double, 
 
     // need to make a random guess for theta
 
-    for(int k=0; k < iterations; ++k){
-      Gradient = 2/batch_size * M_X.transpose()*((M_X*Theta_e)-Y_e);
-      Theta_e = Theta_e - eta*Gradient;
-     };
+//    for(int k=0; k < iterations; ++k){
+//      Gradient = 2/batch_size * M_X.transpose()*((M_X*Theta_e)-Y_e);
+//      Theta_e = Theta_e - eta*Gradient;
+//    };
 
-    Theta.first = Theta_e(0);
-    Theta.second = Theta_e(1);
+//    Theta.first = Theta_e(0);
+ //   Theta.second = Theta_e(1);
     
     return Theta; 
 };

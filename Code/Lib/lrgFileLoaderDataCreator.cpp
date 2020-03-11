@@ -1,8 +1,8 @@
-#include "lrgLoaderDataCreator.h"
+#include "lrgFileLoaderDataCreator.h"
 #include <vector>
 #include <random>
 
-DataLoader::DataLoader(std:string _data_file)
+DataLoader::DataLoader(std::string _data_file)
 {
     data_file = _data_file;
 }
