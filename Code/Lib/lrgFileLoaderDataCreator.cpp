@@ -2,6 +2,7 @@
 #include <vector>
 #include <random>
 #include <fstream>
+#include <string>
 
 DataLoader::DataLoader(std::string _data_file)
 {
@@ -10,20 +11,18 @@ DataLoader::DataLoader(std::string _data_file)
 
 std::vector<std::pair<double, double> >&DataLoader::GetData(std::vector<std::pair<double, double> >&Outputs){
 
-    std::vector<std::string> words;
-    if(std::ifstream in {data_file})
+    std::vector<std::string> import_data;
+
+    std::string line;
+    std::ifstream myfile (data_file);
+    if (myfile.is_open())
     {
-        std::string Outputs;
-        while(in >> word)
+        while ( myfile.good() )
         {
-            words.push_back(word);
+        getline (myfile,line);
         }
+        myfile.close();
     }
-    else
-    {
-        //couldn't open file
-    }
-
-    return Outputs
-
+    
+    return Outputs;
 };
