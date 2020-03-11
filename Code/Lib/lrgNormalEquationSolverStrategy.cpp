@@ -5,13 +5,11 @@
 
 using namespace Eigen;
 
-DataSolver::DataSolver(std::vector<std::pair<double, double> > Inputs)
-{
+DataSolver::DataSolver(){}
+
+std::pair<double, double> DataSolver::FitData(std::vector<std::pair<double, double> > Inputs){
+
     Inputs = Inputs;
-}
-
-std::pair<double, double> DataSolver::FitData(std::vector<std::pair<double, double> >){
-
     std::vector<float> X; 
     std::vector<float> Y; 
 
