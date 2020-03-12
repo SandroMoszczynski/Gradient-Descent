@@ -14,7 +14,7 @@
 
 set(_command_line_apps
   lrgMyFirstApp
-  run
+  Solver
 )
 
 foreach(_app ${_command_line_apps})
