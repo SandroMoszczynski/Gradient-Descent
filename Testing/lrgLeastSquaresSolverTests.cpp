@@ -3,6 +3,7 @@
 #include "lrgLinearDataCreator.h"
 #include "lrgNormalEquationSolverStrategy.h"
 #include "lrgGradientDescentSolverStrategy.h"
+#include "lrgFileLoaderDataCreator.h"
 #include <iostream>
 #include <vector>
 
@@ -59,4 +60,18 @@ TEST_CASE( "test results for gradient solver", "[Gradient Equation Solver]") {
   std::pair<double, double>var6_2;
   var6_2 = test6_2.FitData(var6_1,var6_2);
    REQUIRE(var6_2.first != 0);
+}
+
+TEST_CASE( "Import data from test1", "[Data Reader]") {
+  DataLoader test7("TestData1.txt");
+  std::vector<std::pair<double, double>> var7;
+  var7 = test7.GetData(var7);
+   REQUIRE(var7[0].first == 0.170065);
+}
+
+TEST_CASE( "Import data from test2", "[Data Reader]") {
+  DataLoader test8("TestData2.txt");
+  std::vector<std::pair<double, double>> var8;
+  var8 = test8.GetData(var8);
+   REQUIRE(var8[0].second == 2.55157);
 }
