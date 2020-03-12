@@ -13,6 +13,12 @@ int main(){
   std::vector<std::pair<double, double>> vardataloader;
   loadertest.GetData(vardataloader);
   std::cout << vardataloader[0].first << std::endl; 
+    return 0;
+};
+
+
+
+
   // DataImporter test5_1(1,0,100);
   // std::vector<std::pair<double, double>> var5_1;
   // test5_1.GetData(var5_1);
@@ -35,5 +41,3 @@ int main(){
 
   
 
-    return 0;
-};
