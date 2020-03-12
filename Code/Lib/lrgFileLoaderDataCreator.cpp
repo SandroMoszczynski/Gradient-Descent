@@ -17,11 +17,15 @@ std::vector<std::pair<double, double> >&DataLoader::GetData(std::vector<std::pai
     static char buff[128];
 
     std::ifstream impfile(data_file);
-    while (impfile.good()){
-        impfile.getline(buff,sizeof(buff));
-        import_data.push_back(buff);
+    if (impfile.is_open())
+    {
+        while (impfile.good()){
+            impfile.getline(buff,sizeof(buff));
+            import_data.push_back(buff);
+        }
+        impfile.close();
     }
-    impfile.close();
+    else std::cout << "unable to openfile" << std::endl;
 
     for (int i = 0; i < import_data.size();i++){
         std::stringstream ss(import_data[i]);
