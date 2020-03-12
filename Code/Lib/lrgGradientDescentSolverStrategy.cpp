@@ -6,7 +6,7 @@
 
 using namespace Eigen;
 
-GradientSolver::GradientSolver(float _eta,int _iterations,int _batch_size)
+GradientSolver::GradientSolver(float _eta,int _iterations,float _batch_size)
 {
     eta = _eta;
     iterations = _iterations; 
@@ -21,19 +21,19 @@ std::pair<double, double> &GradientSolver::FitData(std::vector<std::pair<double,
 
     for(int i=0; i < Inputs.size();++i){
         Y_e(i) = Inputs[i].second;
-        M_X(i,0) = Inputs[i].first;
+        M_X.col(1)(i) = Inputs[i].first;
     }
-
-    MatrixXd Gradient(2,1);
+    
+    MatrixXd Gradient;
     MatrixXd Theta_e = MatrixXd::Random(2,1);
 
     for(int k=0; k < iterations; ++k){
-        Gradient = 2/batch_size * M_X.transpose()*((M_X*Theta_e)-Y_e);
-        Theta_e = Theta_e - eta*Gradient;
-    };
+        Gradient = (2/batch_size) * (M_X.transpose()*((M_X*Theta_e)-Y_e));
+        Theta_e = (Theta_e - (eta*Gradient));
+    }
 
-    Theta.first = Theta_e(0);
-    Theta.second = Theta_e(1);
+    Theta.first = Theta_e(1);
+    Theta.second = Theta_e(0);
     
     return Theta; 
 };

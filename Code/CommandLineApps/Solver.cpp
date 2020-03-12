@@ -9,12 +9,15 @@
 int main(int argc, char* argv[])
 {
   if (argc != 3){
-        std::cerr << "Usage: " << argv[0] << " <SOLVER_TYPE> <DATA_TYPE> \n"
+        std::cerr << "Usage: " << argv[0] << " <SOLVER_TYPE> <DATA_TYPE> --D_Creator_param() --Batch_param() \n"
               << "<SOLVER_TYPE>:\n"
               << "Pick whether to use <BATCH> gradient <NORMAL> gradient\n"
               << "<DATA_TYPE>: \n"
-              << "Input <IMPORT> to use import data or, \n"
-              << "Input <GENERATE> to generate data"
+              << "Use <IMPORT> to use import data \n"
+              << "Use <GENERATE> to generate data. \n"
+              //<< "OPTIONALS \n"
+             // << "--BatchParam(Eta,Iterations,Batch_size) \n"
+             // << "--D_Creator_Param(Theta_1,Theta_0,No_points) \n"
               << std::endl;
      return 1;
   }
@@ -39,7 +42,7 @@ int main(int argc, char* argv[])
     std::cin >> Theta_0;
     std::cout << "Please input Number of points in data pool"<< std::endl;
     std::cin >> No_points;
-    DataImporter DataCreator(Theta_1,Theta_1,No_points);
+    DataImporter DataCreator(Theta_1,Theta_0,No_points);
     std::vector<std::pair<double, double> >Data;
     std::cout << "Data Created"<< std::endl;
   }
@@ -51,13 +54,13 @@ int main(int argc, char* argv[])
     DataSolver Normal_solver;
     std::pair<double, double>Results;
     Results = Normal_solver.FitData(Data,Results);
-    std::cout << "Theta_0: " << Results.first << std::endl;
-    std::cout << "Theta_1: " << Results.second << std::endl;
+    std::cout << "Theta_1: " << Results.first << std::endl;
+    std::cout << "Theta_0: " << Results.second << std::endl;
   }
   else if (std::string(argv[1]) == "BATCH"){
     float Eta;
     int Iterations;
-    int Batch_size;
+    float Batch_size;
     std::cout << "Please input Eta"<< std::endl;
     std::cin >> Eta;
     std::cout << "Please input Iterations"<< std::endl;
@@ -67,8 +70,8 @@ int main(int argc, char* argv[])
     GradientSolver Gradient_solver(Eta,Iterations,Batch_size);
     std::pair<double, double>Results;
     Results = Gradient_solver.FitData(Data,Results);
-    std::cout << "Theta_0: " << Results.first << std::endl;
-    std::cout << "Theta_1: " << Results.second << std::endl;
+    std::cout << "Theta_1: " << Results.first << std::endl;
+    std::cout << "Theta_0: " << Results.second << std::endl;
   }
   else {
     std::cout << "Please check you are using either <NORMAL> or <BATCH> \t for variable 1.\n";
