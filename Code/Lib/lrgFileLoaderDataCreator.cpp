@@ -16,7 +16,6 @@ std::vector<std::pair<double, double> >&DataLoader::GetData(std::vector<std::pai
     std::vector<std::string> import_data;
     static char buff[128];
 
-    // std::string line;
     std::ifstream impfile(data_file);
     while (impfile.good()){
         impfile.getline(buff,sizeof(buff));
