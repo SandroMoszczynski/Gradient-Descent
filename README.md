@@ -45,11 +45,8 @@ Here are some simple usage instructions for my solver app;
     - all commands in caps must be typed in exactly (case sensitive), without the "<>".
     - <SOLVER_TYPE> has the options of <BATCH> or <NORMAL>, this will change the solving method for your data.
         - <BATCH> will ask you additional input parameters; "Eta", "Iterations" and "Batch Size".
-        - Note; for the test provided,  Eta = 0.01
-                                        Iterations > 20
-                                        Batch Size ~ 50
-                                are recomended.
-        -<NORMAL> has no options, it will generate outputs automatically if <DATA_TYPE> is correct.
+        - Note; for the test provided;(Eta = 0.01, Iterations > 20, Batch Size ~ 50) are recomended.
+        - <NORMAL> has no options, it will generate outputs automatically if <DATA_TYPE> is correct.
     - <DATA_TYPE> Has the options of <IMPORT> or <GENERATE>, this will change where the data comes from.
         - <IMPORT> will ask for a file location, give the name of the file, without quotations and with the .txt format.
         This will also require the data to be in a text file with space delimited values. 
