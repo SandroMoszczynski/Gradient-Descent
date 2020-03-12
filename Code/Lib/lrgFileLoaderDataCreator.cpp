@@ -21,6 +21,8 @@ std::vector<std::pair<double, double> >&DataLoader::GetData(std::vector<std::pai
     std::vector<std::string> import_data;
     static char buff[128];
 
+// note, I didnt add a full exception here as it seemed a little excessive, it resulted in a core dump.
+
     std::ifstream impfile(data_file);
     if (impfile.is_open())
     {
