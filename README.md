@@ -42,10 +42,10 @@ Usage Instructions
 Here are some simple usage instructions for my solver app;
 1. If using a data file to import, move to bin folder of the build directory, or to the directory you will run Solver from.
 2. Run solver using ./Solver <SOLVER_TYPE> <DATA_TYPE>
-    - all commands in caps must be typed in exactly (case sensitive), without the "<>".
+    - all commands in caps must be typed in exactly (case sensitive), without the "".
     - <SOLVER_TYPE> has the options of "BATCH" or "NORMAL", this will change the solving method for your data.
         - The "BATCH" option will ask you additional input parameters; "Eta", "Iterations" and "Batch Size".
-        - Note; for the test provided;(Eta = 0.01, Iterations > 20, Batch Size ~ 50) are recomended.
+        - Note; for the test provided;(Eta ~ 0.01, Iterations > 20, Batch Size ~ 50) are recomended.
         - The "NORMAL" option has no options, it will generate outputs automatically if <DATA_TYPE> is correct.
     - <DATA_TYPE> Has the options of "IMPORT" or "GENERATE", this will change where the data comes from.
         - The "IMPORT" option will ask for a file location, give the name of the file, without quotations and with the .txt format.
