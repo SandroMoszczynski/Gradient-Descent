@@ -6,7 +6,7 @@
 #include <sstream>
 #include <iostream>
 
-DataLoader::DataLoader(std::string _data_file)
+DataLoader::DataLoader(char* _data_file)
 {
     data_file = _data_file;
 }
