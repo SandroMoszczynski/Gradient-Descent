@@ -19,13 +19,14 @@ std::vector<std::pair<double, double> >&DataLoader::GetData(std::vector<std::pai
     std::ifstream impfile(data_file);
     if (impfile.is_open())
     {
+        std::cout << "File openned" << std::endl;
         while (impfile.good()){
             impfile.getline(buff,sizeof(buff));
             import_data.push_back(buff);
         }
         impfile.close();
     }
-    else std::cout << "unable to openfile" << std::endl;
+    else std::cerr << "!!UNABLE TO OPEN FILE!!" << std::endl;
 
     for (int i = 0; i < import_data.size();i++){
         std::stringstream ss(import_data[i]);

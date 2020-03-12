@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     std::cin >> filename;
     DataLoader LoadData(filename);
     Data = LoadData.GetData(Data);
-    std::cout << "File Imported."<< std::endl;
+    std::cout << "Get Data completed."<< std::endl;
   }
   else if (std::string(argv[2]) == "GENERATE"){
     float Theta_1;
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
     std::cin >> No_points;
     DataImporter DataCreator(Theta_1,Theta_0,No_points);
     std::vector<std::pair<double, double> >Data;
-    std::cout << "Data Created."<< std::endl;
+    std::cout << "Get Data completed."<< std::endl;
   }
   else {
     std::cout << "Please check you are using either <IMPORT> or <GENERATE> for variable 2.\n";
