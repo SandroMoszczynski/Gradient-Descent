@@ -8,7 +8,10 @@
 
 int main(int argc, char* argv[])
 {
-  if (argc != 3){
+
+  //creating some usage instructions
+
+  if (argc != 3){ // note here this was set to be exactly three inputs, any incorrect usage throws out the instructions
         std::cerr << "Usage: " << argv[0] << " <SOLVER_TYPE> <DATA_TYPE> \n"
               << "<SOLVER_TYPE>:\n"
               << "Pick whether to use <BATCH> gradient <NORMAL> gradient\n"
@@ -19,7 +22,9 @@ int main(int argc, char* argv[])
      return 1;
   }
 
-  std::vector<std::pair<double, double> >Data;
+  std::vector<std::pair<double, double> >Data; //initialise outside loops and then fill from loops
+
+// if statements for selecting data inputs
 
   if (std::string(argv[2]) == "IMPORT"){
     std::string filename;
@@ -45,8 +50,11 @@ int main(int argc, char* argv[])
   }
   else {
     std::cout << "Please check you are using either <IMPORT> or <GENERATE> for variable 2.\n";
+    // a suitible message if inputs not detected correctly
   }
   
+// if loops for the type of solver to be used
+
   if (std::string(argv[1]) == "NORMAL"){
     DataSolver Normal_solver;
     std::pair<double, double>Results;
@@ -72,6 +80,7 @@ int main(int argc, char* argv[])
   }
   else {
     std::cout << "Please check you are using either <NORMAL> or <BATCH> \t for variable 1.\n";
+    // a suitible message if inputs not detected correctly
   }
     return 0;
 };

@@ -7,12 +7,19 @@
 #include <iostream>
 #include <vector>
 
+// all the headers are included
+// test variables could probably have been called more intuitive names but, it is easier for me to keep track of variables like this
+
+// this instantiates and tests that the class is working for q2
+
 TEST_CASE( "create a class for DataImporter", "[Linear Data Creator]") {
   DataImporter test1(5,5,5);
   std::vector<std::pair<double, double> >var1;
   test1.GetData(var1);
     REQUIRE( var1[0].first == 0);
 }
+
+// these next two are for q3, the second one takes the average, which should be 50(give or take) as there are 100 points
 
 TEST_CASE( "check size of returned X_Y", "[Linear Data Creator]") {
    DataImporter test2(1,1,100);
@@ -34,6 +41,8 @@ TEST_CASE( "check mean of X_Y", "[Linear Data Creator]") {
      REQUIRE(avg == 51);
 }
 
+// unit test for q4
+
 TEST_CASE( "create a class for DataSolver", "[Normal Equation Solver]") {
   std::vector<std::pair<double, double> > var4_1;
   DataSolver test4_1;  
@@ -41,6 +50,8 @@ TEST_CASE( "create a class for DataSolver", "[Normal Equation Solver]") {
   test4_1.FitData(var4_1,var4_2); 
    REQUIRE( var4_2.first == 0);
 }
+
+// extra unit test for q5
 
 TEST_CASE( "test results for solver", "[Normal Equation Solver]") {
   DataImporter test5_1(1,0,100);
@@ -52,6 +63,8 @@ TEST_CASE( "test results for solver", "[Normal Equation Solver]") {
    REQUIRE(var5_2.first != 0);
 }
 
+// unit test for q6
+
 TEST_CASE( "test results for gradient solver", "[Gradient Equation Solver]") {
   DataImporter test6_1(1,0,100);
   std::vector<std::pair<double, double> >var6_1;
@@ -61,6 +74,9 @@ TEST_CASE( "test results for gradient solver", "[Gradient Equation Solver]") {
   var6_2 = test6_2.FitData(var6_1,var6_2);
    REQUIRE(var6_2.first != 0);
 }
+
+// unit tests for q7, for test1 and test2, note this doesnt mean that the data was imported fully correctly
+// the test for this was the Solver command line app, where I checked the outputs were correct.
 
 TEST_CASE( "Import data from test1", "[Data Reader]") {
   DataLoader test7("TestData1.txt");

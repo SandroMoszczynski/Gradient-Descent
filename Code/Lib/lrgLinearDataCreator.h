@@ -1,5 +1,7 @@
 #include "lrgDataCreatorI.h"
 
+// data importer requires a theta pair to make its data, as it is based on y=mx+c there theta_0 = c and theta_1 = m
+
 class DataImporter : public DataImporterI {
     private:
     float theta_1;
