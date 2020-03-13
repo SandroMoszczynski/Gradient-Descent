@@ -79,14 +79,14 @@ TEST_CASE( "test results for gradient solver", "[Gradient Equation Solver]") {
 // the test for this was the Solver command line app, where I checked the outputs were correct.
 
 TEST_CASE( "Import data from test1", "[Data Reader]") {
-  DataLoader test7("TestData1.txt");
+  DataLoader test7("Testing/TestData1.txt");
   std::vector<std::pair<double, double>> var7;
   var7 = test7.GetData(var7);
    REQUIRE(var7[0].first == 0.170065);
 }
 
 TEST_CASE( "Import data from test2", "[Data Reader]") {
-  DataLoader test8("TestData2.txt");
+  DataLoader test8("Testing/TestData2.txt");
   std::vector<std::pair<double, double>> var8;
   var8 = test8.GetData(var8);
    REQUIRE(var8[0].second == 2.55157);

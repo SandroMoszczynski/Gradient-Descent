@@ -21,9 +21,12 @@ set(TEST_CASES
   lrgLeastSquaresSolverTests
 )
 
+file(COPY ${DATA_DIR}/TestData1.txt DESTINATION "Testing")
+file(COPY ${DATA_DIR}/TestData2.txt DESTINATION "Testing")
+
 foreach(_test_case ${TEST_CASES})
   add_executable(${_test_case} ${_test_case}.cpp lrgCatchMain.cpp)
-  target_link_libraries(${_test_case} ${PHAS0100ASSIGNMENT1_LIBRARIES} ${ALL_THIRD_PARTY_LIBRARIES})
+  target_link_libraries(${_test_case} ${PHAS0100ASSIGNMENT1_LIBRARIES} ${ALL_THIRD_PARTY_LIBRARIES}) 
 endforeach()
 
 # Adding tests is done outside the above loop,
@@ -35,3 +38,4 @@ endforeach()
 
 add_test(NoArgs ${EXECUTABLE_OUTPUT_PATH}/lrgBasicTest)
 add_test(1File ${EXECUTABLE_OUTPUT_PATH}/lrgCommandLineArgsTest ${DATA_DIR}/input.txt)
+add_test(leastsquarestest ${EXECUTABLE_OUTPUT_PATH}/lrgLeastSquaresSolverTests)
