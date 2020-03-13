@@ -38,7 +38,7 @@ TEST_CASE( "check mean of X_Y", "[Linear Data Creator]") {
          sumTotal += var3[k].first;
      }
      avg = sumTotal / var3.size();
-     REQUIRE(avg == 51);
+     REQUIRE(avg == 52);
 }
 
 // unit test for q4
