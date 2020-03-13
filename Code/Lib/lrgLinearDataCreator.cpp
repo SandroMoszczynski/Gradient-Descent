@@ -23,7 +23,7 @@ std::vector<std::pair<double, double> >&DataImporter::GetData(std::vector<std::p
 
     for(int i=0;i<100;++i){        
         std::uniform_int_distribution<int> distribution(0,len_array);
-        std::uniform_real_distribution<double> noise_distribution(0.0,1.0);
+        std::uniform_real_distribution<double> noise_distribution(-1.0,1.0);
         float x_coord = distribution(generator);
         float noise = noise_distribution(generator);
         float y_coord = theta_1*x_coord + theta_0 + noise;
