@@ -1,9 +1,7 @@
 PHAS0100Assignment1
 ------------------
 
-[![Build Status](https://travis-ci.com/MattClarkson/PHAS0100Assignment1.svg?branch=master)](https://travis-ci.com/MattClarkson/PHAS0100Assignment1)
-[![Build Status](https://travis-ci.com/github/sukrire/PHAS0100Assignment1)]
-
+[![Build Status](https://travis-ci.com/github/sukrire/PHAS0100Assignment1.svg?branch=master)](https://travis-ci.com/github/sukrire/PHAS0100Assignment1)
 
 Purpose
 -------
