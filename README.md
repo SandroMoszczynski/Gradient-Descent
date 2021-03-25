@@ -1,4 +1,4 @@
-PHAS0100Assignment1
+Gradient Descent
 ------------------
 
 [![Build Status](https://travis-ci.com/github/sukrire/PHAS0100Assignment1.svg?branch=master)](https://travis-ci.com/github/sukrire/PHAS0100Assignment1)
